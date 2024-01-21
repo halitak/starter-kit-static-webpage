@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% block title %}
+    <title>{{title}}</title>
+    {% endblock %}
+    {% block css %}
+    <link rel="stylesheet" href="@master/index.scss"/>
+    {% endblock %}
+    {% block js %}
+    <script src="@master/index.js" defer></script>
+    {% endblock %}
+  </head>
+  <body class="flex flex-col min-h-screen">
+    {% include "master/header.html" ignore missing %}
+    <main class="flex-grow main">{% block content %}{% endblock %}</main>
+    {% include "master/footer.html" ignore missing %}
+  </body>
+</html>
